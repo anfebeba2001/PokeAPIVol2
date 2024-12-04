@@ -1,11 +1,10 @@
-package com.AndresBejarano.PokeAPIVol2.Components;
+package com.AndresBejarano.PokeAPIVol2.Controllers;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin
 @RequestMapping("/api/v1/pokemons")
 public class PokemonController {
     @PostMapping("/Debugging")
