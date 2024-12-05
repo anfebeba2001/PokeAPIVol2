@@ -19,7 +19,7 @@ public class SecurityConfigForMain {
         http.httpBasic(AbstractHttpConfigurer::disable).authorizeHttpRequests(request ->
                 request.requestMatchers("/").permitAll()
                         .requestMatchers("/error").permitAll()
-                        .anyRequest().authenticated())
+                        .anyRequest().permitAll())
                 .oauth2ResourceServer(oauth2 -> oauth2.jwt(Customizer.withDefaults()))
                 .sessionManagement( session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .csrf(AbstractHttpConfigurer::disable);
