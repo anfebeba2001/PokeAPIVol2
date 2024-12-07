@@ -22,4 +22,25 @@ public class AbilityMapper {
                 .description(ability.getDescription())
                 .build();
     }
+    public static Ability updateEntity(
+            Ability foundAbility,
+            AbilityRequest abilityRequest) {
+        return Ability
+                .builder()
+                .id(foundAbility.getId())
+                .name(abilityRequest.getName())
+                .effect(abilityRequest.getEffect())
+                .description(abilityRequest.getDescription())
+                .build();
+
+    }
+
+    public static AbilityRequest mapEntityToRequest(Ability abilityEntity) {
+        return AbilityRequest
+                .builder()
+                .name(abilityEntity.getName())
+                .description(abilityEntity.getDescription())
+                .effect(abilityEntity.getEffect())
+                .build();
+    }
 }
